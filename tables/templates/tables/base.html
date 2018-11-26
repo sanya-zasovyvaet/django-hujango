@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DB Interface</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'tables/style.css' %}">
+</head>
+<body>
+  <ul class="nav nav-tabs bg-primary">
+    <li class="nav-item">
+      <a class="nav-link active" href="/tables/charts">Charts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/tables/">Tables</a>
+    </li>
+  </ul>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

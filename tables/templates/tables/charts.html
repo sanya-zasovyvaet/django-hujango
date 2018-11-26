@@ -1,0 +1,30 @@
+{% extends 'tables/base.html' %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <h3>Piechart</h3>
+      <p><small class="text-muted">Shows the percentage of how many cards of each type the system has.</small></p>
+      <hr>
+      <div class="row">
+        <div class="col-6">
+          <img class="piechart" src="{% url 'piechart' %}" alt="chart">
+        </div>
+        <div class="col-6">
+          <div class="card bg-light mb-3">
+            <h5 class="card-header">
+              Cards
+            </h5>
+            <div>
+              <ul class="list-group list-group-flush">
+              {% for tariff_name, quantity in cards_dict.items %}
+                <li class="list-group-item">{{ tariff_name }}: {{ quantity }}</li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
